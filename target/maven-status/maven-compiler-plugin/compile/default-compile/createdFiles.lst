@@ -1,0 +1,6 @@
+com\docker\DockerBasic\service\CustomerManagementService.class
+com\docker\DockerBasic\entity\CustomerDetailEntity.class
+com\docker\DockerBasic\repository\CustomerRepo.class
+com\docker\DockerBasic\controller\CustomerManagementController.class
+com\docker\DockerBasic\model\CustomerDetailModel.class
+com\docker\DockerBasic\DockerBasicApplication.class
