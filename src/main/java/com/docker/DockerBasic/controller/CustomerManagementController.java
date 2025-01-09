@@ -21,12 +21,12 @@ public class CustomerManagementController {
     @GetMapping("/getAllCustomer")
     public Object getAllCustomer() {
 
-//        return managementService.getAllCustomer();
-        return  "testing";
+        return managementService.getAllCustomer();
+//        return  "testing";
     }
 
     @GetMapping("/getCustomerDetail")
-    public CustomerDetailEntity getCustomer(@RequestParam("customerId") Long customerId) {
+    public CustomerDetailEntity getCustomer(@RequestParam("customerId") String customerId) {
 
         return managementService.getCustomer(customerId);
     }
@@ -38,7 +38,7 @@ public class CustomerManagementController {
     }
 
     @GetMapping("/deleteCustomer")
-    public String deleteCustomer(@RequestParam("customerId") Long customerId) {
+    public String deleteCustomer(@RequestParam("customerId") String customerId) {
 
         return managementService.deleteCustomer(customerId);
     }

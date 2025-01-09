@@ -9,15 +9,10 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class CustomerDetailModel {
 
-    private Long customerId;
-
-    private String customerName;
-
+    private String customer_id;
+    private String customer_name;
     private String address;
-
-    private String contactNo;
-
+    private String contact_no;
     private String city;
-
     private String gender;
 }

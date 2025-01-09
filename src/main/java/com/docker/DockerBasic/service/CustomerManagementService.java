@@ -21,11 +21,11 @@ public class CustomerManagementService {
     public CustomerDetailEntity addCustomer(CustomerDetailModel model) {
 
         CustomerDetailEntity customerDetail = new CustomerDetailEntity();
-        customerDetail.setCustomerName(model.getCustomerName());
+        customerDetail.setCustomer_name(model.getCustomer_name());
         customerDetail.setCity(model.getCity());
         customerDetail.setAddress(model.getAddress());
         customerDetail.setGender(model.getGender());
-        customerDetail.setContactNo(model.getContactNo());
+        customerDetail.setContact_no(model.getContact_no());
 
         return customerRepo.save(customerDetail);
     }
@@ -35,7 +35,7 @@ public class CustomerManagementService {
         return (List<CustomerDetailEntity>) customerRepo.findAll();
     }
 
-    public CustomerDetailEntity getCustomer(Long customerId) {
+    public CustomerDetailEntity getCustomer(String customerId) {
 
         CustomerDetailEntity entity = new CustomerDetailEntity();
 
@@ -50,26 +50,26 @@ public class CustomerManagementService {
 
     public CustomerDetailEntity updateDetail(CustomerDetailModel model) {
 
-        Optional<CustomerDetailEntity> entity = customerRepo.findById(model.getCustomerId());
+        Optional<CustomerDetailEntity> entity = customerRepo.findById(model.getCustomer_id());
 
         CustomerDetailEntity customerDetailEntity = new CustomerDetailEntity();
 
         if (entity.isPresent()) {
             CustomerDetailEntity customerDetail = new CustomerDetailEntity();
-            customerDetail.setCustomerName(model.getCustomerName());
+            customerDetail.setCustomer_name(model.getCustomer_name());
             customerDetail.setCity(model.getCity());
             customerDetail.setAddress(model.getAddress());
             customerDetail.setGender(model.getGender());
-            customerDetail.setContactNo(model.getContactNo());
+            customerDetail.setContact_no(model.getContact_no());
             CustomerDetailEntity detail = customerRepo.save(customerDetail);
-            customerRepo.deleteById(model.getCustomerId());
-            customerDetailEntity = customerRepo.findById(detail.getCustomerId()).get();
+            customerRepo.deleteById(model.getCustomer_id());
+            customerDetailEntity = customerRepo.findById(detail.getCustomer_id()).get();
 
         }
         return customerDetailEntity;
     }
 
-    public String deleteCustomer(Long customerId) {
+    public String deleteCustomer(String customerId) {
 
         Optional<CustomerDetailEntity> entity = customerRepo.findById(customerId);
 
