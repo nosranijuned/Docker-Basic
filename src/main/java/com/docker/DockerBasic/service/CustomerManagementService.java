@@ -16,11 +16,12 @@ public class CustomerManagementService {
     @Autowired
     CustomerRepo customerRepo;
 
-    RestTemplate restTemplate = new RestTemplate();
+    //RestTemplate restTemplate = new RestTemplate();
 
     public CustomerDetailEntity addCustomer(CustomerDetailModel model) {
 
         CustomerDetailEntity customerDetail = new CustomerDetailEntity();
+        customerDetail.setCustomer_id(model.getCustomer_id());
         customerDetail.setCustomer_name(model.getCustomer_name());
         customerDetail.setCity(model.getCity());
         customerDetail.setAddress(model.getAddress());
